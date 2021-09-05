@@ -1,0 +1,41 @@
+<script>
+
+    function removeDiv1() {
+        var parentDiv = document.getElementById("parentDiv");
+        var textNode = parentDiv.childNodes[0];
+        parentDiv.removeChild(textNode);
+    }
+    function removeDiv2() {
+        var parentDiv = document.getElementById("parentDiv");
+        parentDiv.innerHTML = "";
+    }
+    function recover() {
+        var parentDiv = document.getElementById("parentDiv");
+        parentDiv.innerHTML = "这里是文本 ";
+    }
+
+</script>
+
+<style>
+    button {
+        display: block;
+    }
+</style>
+
+<!--
+    删除文本节点
+    1. 通过childNodes[0] 获取文本节点
+    注:children[0] 只能获取第一个子元素节点，不能获取文本节点
+    2. 通过removeChild删除该文本节点
+    但是这种方式比较麻烦，一般都是直接通过innerHTML设置为空即可。
+    注: 通过innerHTML=""的方式，同样会导致文本子节点被删除。
+-->
+
+<div id="parentDiv">
+    这里是文本
+
+</div>
+
+<button onclick="removeDiv1()">通过removechild删除div下的文本节点</button>
+<button onclick="removeDiv2()">通过innerHTML让内容置空</button>
+<button onclick="recover()">恢复内容</button>

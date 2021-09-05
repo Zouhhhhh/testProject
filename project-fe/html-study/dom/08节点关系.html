@@ -1,0 +1,29 @@
+# 当前DIV节点
+<div id="parentDiv">
+    <div id="d1">第一个div</div>
+    <div id="d2">第二个div</div>
+    <div id="d3">第三个div</div>
+</div>
+
+# 节点关系
+d1,d2,d3都有父节点：ParentNode
+parentDiv有第一个和最后一个子节点：firstNode, lastNode
+d2有前节点和后节点：previousSibling, nextSibling
+
+
+# childNodes和children的区别
+childNodes和children都可以获取一个元素节点的子节点。
+childNodes 会包含文本节点：6
+children 会排除文本节点：3
+
+
+<button onclick="showNumber1()">通过childNodes获取子节点总数</button>
+<button onclick="showNumber2()">通过children()获取子节点总数</button>
+<script>
+    function showNumber1() {
+        alert(document.getElementById("parentDiv").childNodes.length);
+    }
+    function showNumber2() {
+        alert(document.getElementById("parentDiv").children.length);
+    }
+</script>

@@ -1,0 +1,17 @@
+<html>
+    <p>
+    通过createElement 创建一个新的元素节点
+    接着把该元素节点，通过appendChild加入到另一个元素节点div1中
+    </p>
+<div id="d">Hello HTML DOM</div>
+<script>
+    function add() {
+        var hr = document.createElement("hr");
+        var div1 = document.getElementById("d");
+        div1.appendChild(hr);
+    }
+</script>
+
+<button onclick="add()">在div中追加一个hr元素</button>
+
+</html>

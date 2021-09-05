@@ -1,0 +1,22 @@
+<script>
+    function removeDiv() {
+        var parentDiv = document.getElementById("parentDiv");
+        var div2 = document.getElementById("div2");
+        parentDiv.removeChild(div2);
+    }
+
+</script>
+
+
+
+<!--
+    要删除某个元素节点有两步
+    第一：先获取该元素的父节点
+    第二：通过父节点，调用removeChild 删除该节点
+-->
+<div id="parentDiv">
+    <div id="div1">安全的div</div>
+    <div id="div2">即将被删除的div</div>
+</div>
+
+<button onclick="removeDiv()">删除第二个div</button>

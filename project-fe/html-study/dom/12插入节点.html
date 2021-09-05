@@ -1,0 +1,22 @@
+<div id="parentDiv">
+    <div id="d1">第一个div</div>
+    <div id="d2">第二个div</div>
+    <div id="d3">第三个div</div>
+</div>
+
+<script>
+
+    function insertDiv() {
+        var d25 = document.createElement("div");
+        var text = document.createTextNode("第二点五个div");
+        d25.appendChild(text);
+
+        var parentDiv = document.getElementById("parentDiv");
+        var d3 = document.getElementById("d3");
+
+        parentDiv.insertBefore(d25, d3);
+    }
+
+</script>
+
+<button onclick="insertDiv()">在第三之前，插入第二点五个div</button>

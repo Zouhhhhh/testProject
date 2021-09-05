@@ -1,0 +1,25 @@
+<button onclick="hide()">隐藏div</button>
+
+<button onclick="show()">显示div</button>
+
+<br>
+<br>
+
+<div id="d">
+
+    这是一个div
+
+</div>
+
+<script>
+    function hide() {
+        var d = document.getElementById("d");
+        d.style.display = "none";
+    }
+
+    function show() {
+        var d = document.getElementById("d");
+        d.style.display = "block";
+    }
+
+</script>

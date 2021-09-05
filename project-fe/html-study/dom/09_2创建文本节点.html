@@ -1,0 +1,24 @@
+<html>
+    <pre>
+        首先创建一个元素节点p (p是p标签，不是随便命名的变量名)
+        接着通过createTextNode创建一个内容节点text
+        把text加入到p
+        再把p加入到div
+    </pre>
+<div id="d">Hello HTML DOM</div>
+<script>
+    function add() {
+
+        var p = document.createElement("p");
+        var text = document.createTextNode("这是通过DOM创建出来的<p>");
+        p.appendChild(text);
+
+        var div1 = document.getElementById("d");
+        div1.appendChild(p);
+
+    }
+</script>
+
+<button onclick="add()">在div中追加一个p元素</button>
+
+</html>

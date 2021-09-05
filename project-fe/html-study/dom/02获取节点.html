@@ -1,0 +1,54 @@
+<html>
+
+<h2>通过id获取元素节点</h2>
+<div id="d1">hello HTML DOM</div>
+<script>
+    var div1 = document.getElementById("d1");
+    document.write(div1);
+</script>
+
+<h2>通过标签名称获取元素节点</h2>
+<div>hello javascript</div>
+<div>hello BOM</div>
+<div>hello DOM</div>
+<br>
+<script>
+    var divs = document.getElementsByTagName("div");
+    for (i = 0; i < divs.length; i++) {
+        document.write(divs[i]);
+        document.write("<br>");
+    }
+</script>
+
+
+
+<h2>通过类名获取元素节点</h2>
+<h4 class="d">hello javascript</h4>
+<h5 class="d">hello BOM</h5>
+<div class="d">hello DOM</div>
+<br>
+<script>
+    var elements = document.getElementsByClassName("d");
+    for (i = 0; i < elements.length; i++) {
+        document.write(elements[i]);
+        document.write("<br>");
+    }
+</script>
+
+
+<h2>通过表单元素的name获取元素节点</h2>
+用户名 <input name="userName"> <br>
+密码 <input name="userPassword">
+<br>
+<script>
+    var elements = document.getElementsByName("userName");
+
+    for (i = 0; i < elements.length; i++) {
+        document.write(elements[i]);
+        document.write("<br>");
+    }
+</script>
+
+
+
+</html>

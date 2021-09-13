@@ -22,6 +22,6 @@ json对象：指符合json格式要求的js对象。例如：var jsonObj = { Stu
 var json = JSON.stringify({"province":"shanghai", "city":"xian"});
 console.log(json);  //结果是{"province":"shanghai", "city":"xian"}
 
-将字符暗藏转为JSON对象
+将字符串转为JSON对象
 var obj = JSON.parse('{"province":"shanghai", "city":"xian"}');
 console.log(obj);   //结果是Object

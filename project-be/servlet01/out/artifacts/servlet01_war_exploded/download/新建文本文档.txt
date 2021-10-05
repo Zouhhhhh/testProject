@@ -1,0 +1,8 @@
+
+
+微信，QQ，酷狗
+
+VScode，jdk，idea，maven，noted++，mysql，navicat，Gitbush
+
+
+vue相关，nodejs，cli，vue开发者

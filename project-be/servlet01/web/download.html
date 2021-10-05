@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件下载</title>
+</head>
+<body>
+
+    <!--    浏览器可以识别的资源，点击后可查看  -->
+    <a href="download/新建文本文档.txt">文本文件</a>
+    <a href="download/微信图片_20211005000725.png">图片文件</a>
+
+    <!--    浏览器不能识别的资源，点击后下载-->
+    <a href="download/新建文本文档.zip">压缩文件</a>  <br>
+
+    <!--    如果要将浏览器可识别的资源点击下载，需要添加dowm属性，还可以更换名字-->
+    <a href="download/新建文本文档.txt" download>文本文件</a>
+    <a href="download/微信图片_20211005000725.png" download="百度.png">图片文件</a>
+
+    <br>
+    <hr>
+
+    <form action="downloadServlet">
+        文件名：<input type="text" name="fileName" placeholder="请输入">
+        <button>下载</button>
+    </form>
+
+
+</body>
+</html>

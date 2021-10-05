@@ -19,5 +19,6 @@ public class Servlet01 extends HttpServlet {
         //输出数据到浏览器
         resp.getWriter().write("hello servlet!");
 
+        //修改后用IDEA去push
     }
 }

@@ -1,0 +1,22 @@
+2021-10-30 21:24:24 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.testLog4j(UserMapperTest.java:19) ]
+INFO:info:进入了testLog4j方法
+2021-10-30 21:24:24 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.testLog4j(UserMapperTest.java:21) ]
+ERROR:info:进入了error方法
+2021-10-30 21:26:36 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@663c9e7a
+2021-10-30 21:27:17 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:我写的:
+2021-10-30 21:27:17 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:32) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@663c9e7a
+2021-10-30 21:27:48 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:我写的:
+2021-10-30 21:27:48 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:32) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@606e4010
+2021-10-30 23:35:16 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:我写的:
+2021-10-30 23:35:16 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:32) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@663c9e7a
+2021-10-30 23:44:57 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:我写的:
+2021-10-30 23:44:57 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:32) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@663c9e7a

@@ -1,0 +1,8 @@
+2021-10-31 23:35:47 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:30) ]
+INFO:我写的:
+2021-10-31 23:35:47 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@173ed316
+2021-10-31 23:36:37 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:30) ]
+INFO:我写的:
+2021-10-31 23:36:37 下午 [Thread: main][ Class:com.kuang.dao.UserMapperTest >> Method: com.kuang.dao.UserMapperTest.test(UserMapperTest.java:31) ]
+INFO:org.apache.ibatis.session.defaults.DefaultSqlSession@74ea2410

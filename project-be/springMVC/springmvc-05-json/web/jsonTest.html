@@ -1,0 +1,33 @@
+<%--
+Created by IntelliJ IDEA.
+User: Administrator
+Date: 2021/12/4
+Time: 10:17
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+
+    <script type="text/javascript">
+        var user = {
+            name: "zou",
+            age: 12,
+            sex: "男"
+        };
+
+        var json = JSON.stringify(user);
+
+        var user2 = JSON.parse(json);
+        console.log(user2);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

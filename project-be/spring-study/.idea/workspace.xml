@@ -1,33 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e23544d-4835-4bae-8ae6-c3615c5b9e9f" name="Default Changelist" comment="提交代理模式Proxy学习内容">
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/Spring-09-aop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/diy/AnnotationPointCut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/diy/DiyPointCut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/log/AfterLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/log/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/java/com/kuang/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-09-aop/src/test/java/MyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo03/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo03/Host.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo03/ProxyInvocationHandle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo03/Rent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo04/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/demo04/ProxyInvocationHandle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/AllClassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/ClassLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/CreatedClassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/User.java" afterDir="false" />
+    <list default="true" id="3e23544d-4835-4bae-8ae6-c3615c5b9e9f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/mybatis-01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/java/com/kuang/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/java/com/kuang/dao/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/java/com/kuang/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/java/com/kuang/utils/MybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-01/src/test/java/com/kuang/dao/UserMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/mybatis-05.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/main/java/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/main/java/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/main/java/utils/MybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-05/src/test/java/Mytest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study/mybatis-study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/java/com/kuang/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/java/com/kuang/dao/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/java/com/kuang/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/java/com/kuang/utils/MybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-01/src/test/java/com/kuang/dao/UserMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-02/mybatis-02.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-02/src/test/java/MyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/mybatis-study02.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mybatis-study02/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-10-mybatis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-01-servlet/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-01-servlet/src/main/java/com/kuang/servlet/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-01-servlet/web/WEB-INF/jsp/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-01-servlet/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-02-hellomvc/src/main/java/com/kuang/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-02-hellomvc/src/main/resources/springmvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-02-hellomvc/web/WEB-INF/jsp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springMVC-02-hellomvc/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-03-annotation/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-03-annotation/src/main/java/com/kuang/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-03-annotation/src/main/resources/springmvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-03-annotation/web/WEB-INF/jsp/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-03-annotation/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/ControllerTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/ControllerTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/ControllerTest3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/Encoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/ModelTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/filter/CharsetFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/filter/GenericEncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/java/com/kuang/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/src/main/resources/springmvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/web/WEB-INF/jsp/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/web/WEB-INF/jsp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-04-controller/web/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/src/main/java/com/kuang/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/src/main/java/com/kuang/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/src/main/resources/springmvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/springmvc-05-json/web/jsonTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/ClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-08-proxy/src/main/java/com/kuang/onlytest/ClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-08-proxy/target/classes/com/kuang/onlytest/ClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-08-proxy/target/classes/com/kuang/onlytest/ClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studyDocument/java内存.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../studyDocument/java内存.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +131,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -88,7 +139,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -206,7 +257,15 @@
       <workItem from="1634911326439" duration="1531000" />
       <workItem from="1634962451821" duration="1536000" />
       <workItem from="1634964186098" duration="5494000" />
-      <workItem from="1634991640681" duration="6311000" />
+      <workItem from="1634991640681" duration="7600000" />
+      <workItem from="1635054207401" duration="105000" />
+      <workItem from="1635088034158" duration="17000" />
+      <workItem from="1635088144537" duration="9000" />
+      <workItem from="1636639697510" duration="1094000" />
+      <workItem from="1637594329488" duration="20000" />
+      <workItem from="1638585819724" duration="7000" />
+      <workItem from="1638587461716" duration="93000" />
+      <workItem from="1638891058193" duration="507000" />
     </task>
     <task id="LOCAL-00001" summary="提交spring学习内容">
       <created>1634222188427</created>
@@ -229,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634963982620</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="提交Spring AOP学习内容">
+      <created>1635000259093</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635000259093</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +318,7 @@
     <MESSAGE value="提交spring学习内容" />
     <MESSAGE value="提交spring学习内容2" />
     <MESSAGE value="提交代理模式Proxy学习内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交代理模式Proxy学习内容" />
+    <MESSAGE value="提交Spring AOP学习内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交Spring AOP学习内容" />
   </component>
 </project>

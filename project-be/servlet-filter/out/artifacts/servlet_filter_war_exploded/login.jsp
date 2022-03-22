@@ -14,6 +14,7 @@
 
 <form action="/login" method="post">
     <input type="text" name="name">
+    <input type="text" name="pwd">
     <input type="submit" value="提交">
 </form>
 

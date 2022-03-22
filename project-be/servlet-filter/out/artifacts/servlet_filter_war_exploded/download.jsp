@@ -12,11 +12,10 @@
 </head>
 <body>
 
-<form action="/login" method="post">
-    <input type="text" name="name">
-    <input type="text" name="pwd">
-    <input type="submit" value="提交">
-</form>
+<a href="www.baidu.com">资源1</a>
+<a href="www.baidu.com">资源2</a>
+<a href="www.baidu.com">资源3</a>
+
 
 
 $END$

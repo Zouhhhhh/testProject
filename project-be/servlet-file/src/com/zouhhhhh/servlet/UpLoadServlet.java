@@ -1,5 +1,11 @@
 package com.zouhhhhh.servlet;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -8,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.DatagramSocket;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @WebServlet("/upload")
 public class UpLoadServlet extends HttpServlet {
@@ -57,8 +65,39 @@ public class UpLoadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String img = req.getParameter("img");
-        System.out.println(img);      //null
+
+        DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+        ServletFileUpload servletFileUpload = new ServletFileUpload(fileItemFactory);
+
+        try {
+            List<FileItem> fileItems = servletFileUpload.parseRequest(req);
+            for (FileItem fileItem : fileItems) {
+                if (fileItem.isFormField()) {
+                    //不是文件
+                    String name = fileItem.getFieldName();
+                    String value = fileItem.getString("UTF-8");
+                    System.out.println(" name: "+ name + " value: " + value );
+                } else {
+                    //是文件
+                    String fileName = fileItem.getName();
+                    long size = fileItem.getSize();
+                    System.out.println(fileName + ":" + size + "byte");
+                    InputStream inputStream = fileItem.getInputStream();
+                    String path = req.getServletContext().getRealPath("file/" + fileName);
+                    OutputStream outputStream = new FileOutputStream(path);
+                    int temp = 0;
+                    while ((temp = inputStream.read()) != -1) {
+                        outputStream.write(temp);
+                    }
+                    outputStream.close();
+                    inputStream.close();
+                    System.out.println("上传成功");
+                }
+            }
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

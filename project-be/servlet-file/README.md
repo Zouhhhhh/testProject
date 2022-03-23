@@ -34,7 +34,26 @@ Servlet需要注意的：
 
 使用框架（fileupload）完成文件上传
     1. 导包，WEB-INF下创建lib
-    2. 
+    2. fileupload组件可以将所有的请求信息都解析成FileItem对象，可以通过对这个FileItem对象操作完成上传，面向对象思想开发
+    3. 创建磁盘文件项目工厂，然后用这个去创建一个servletFileUpload，用它去接收request里的文件
+        DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+        ServletFileUpload servletFileUpload = new ServletFileUpload(fileItemFactory);
+        List<FileItem> fileItems = servletFileUpload.parseRequest(req);
+    4. 接收到的是一个文件List，代表一个一个文件，可以遍历这个List，输出每个文件的信息
+        for (FileItem fileItem : fileItems) {
+            if (fileItem.isFormField()) {   //是否文件
+                System.out.println(fileItem.getName());
+                System.out.println(fileItem.getFieldName());
+            }
+        }
+    5. 接收输入框或文件（文件名的乱码没解决）
+        for (FileItem fileItem : fileItems) {
+            if (fileItem.isFormField()) {
+                //...输入框的描述
+            } else {
+                //...上传文件的操作
+            }
+        }
     
 
 

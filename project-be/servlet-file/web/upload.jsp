@@ -13,6 +13,7 @@
 <body>
 
     <form action="/upload" method="post" enctype="multipart/form-data">
+        <input name="desc" type="text"/>
         <input name="img" type="file"/>
         <input type="submit" value="上传"/>
     </form>

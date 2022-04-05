@@ -4,6 +4,6 @@ import com.zouhhhhh.entity.Reader;
 
 public interface LoginService {
 
-    public Reader login(String username, String password);
+    Object login(String username, String password, String type);
 
 }

@@ -34,3 +34,10 @@
     - 屏蔽铭感词     test.jsp、wordServlet、wordFilter
     - 控制资源的访问权限     download.jsp、DownLoadFilter过滤"/download.jsp"，如果name为空，重定向到login
 
+
+补充：
+@WebFilter 用于将一个类声明为过滤器，该注解将会在部署时被容器处理，容器将根据具体的属性配置将相应的类部署为过滤器。
+该注解具有下表给出的一些常用属性 ( 以下所有属性均为可选属性，但是 value、urlPatterns、servletNames 三者必需至少包含一个，
+且 value 和 urlPatterns 不能共存，如果同时指定，通常忽略 value 的取值 )
+
+主要用urlPatterns = { "/*" }

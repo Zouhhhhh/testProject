@@ -8,9 +8,18 @@
     - 在repository写连接数据库，一个表对应一个repository接口
     - 从controller开始，依次注入各层依赖的对象
     
+## 登录页面
 4. 导入连接数据库所需要的包和配置文件（c3p0包和配置文件、jdbc驱动）
 5. 写数据库连接的工具类JDBCTools
 6. 回到controller获取页面传过来的参数去调用service查这个对象，如果返回不是null则放session，如是null，重定向到login.jsp
+7. 在login.jsp页面还会传过来一个用户类型type，在servlet拿到后，给service判断是Reader还是Admin，根据type去查不同的表
+    （ps：传过来的username如果是中文会乱码，自己加个过滤器）
+    
+## 首页
+8. admin登录没问题后，开始首页（包括index.jsp、top.jsp、footer.jsp）
+9. 在LoginServlet登录成功后，请求转发到index.jsp，同时req里面带上图书的list数据（controller把Model带到view）
+10. 写Book相关的业务（BookService, BookRepository、Book类、BookCase类），这里注意Book和BookCase的多对一关系
 
 
-
+## 分页
+通过sql语句的limit

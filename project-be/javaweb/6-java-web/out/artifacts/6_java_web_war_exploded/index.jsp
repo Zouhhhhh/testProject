@@ -31,6 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				if(page == pages){
 					return;
 				}
+
 				page++;
 				location.href = "/book?page="+page;
 			})

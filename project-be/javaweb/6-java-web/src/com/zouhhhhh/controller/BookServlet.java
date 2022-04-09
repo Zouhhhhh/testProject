@@ -22,6 +22,12 @@ public class BookServlet extends HttpServlet {
         String pageStr = req.getParameter("page");
         Integer page = Integer.parseInt(pageStr);
         List<Book> books = bookService.findAll(page);
+        req.setAttribute("list", books);
+        req.setAttribute("dataPrePage", 6);
+        req.setAttribute("currentPage", pageStr);
+        req.setAttribute("pages", bookService.getPages());
+
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
 
     }
 }

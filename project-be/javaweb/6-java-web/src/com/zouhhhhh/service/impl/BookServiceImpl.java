@@ -1,16 +1,23 @@
 package com.zouhhhhh.service.impl;
 
 import com.zouhhhhh.entity.Book;
+import com.zouhhhhh.entity.Borrow;
 import com.zouhhhhh.repository.BookRepository;
+import com.zouhhhhh.repository.BorrowRepository;
 import com.zouhhhhh.repository.impl.BookRepositoryImpl;
+import com.zouhhhhh.repository.impl.BorrowRepositoryImpl;
 import com.zouhhhhh.service.BookService;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository = new BookRepositoryImpl();
     private final int LIMIT = 6;
+
+    private BorrowRepository borrowRepository = new BorrowRepositoryImpl();
 
     @Override
     public List<Book> findAll(int page) {
@@ -25,13 +32,19 @@ public class BookServiceImpl implements BookService {
         return page;
     }
 
-    public static void main(String[] args) {
-        int count = 14;
-        int limit = 6;
-        int page = (int) Math.ceil((double) count / limit);
-        System.out.println(page);
-        int ii = 0;
+    @Override
+    public void addBorrow(Integer bookid, Integer readerid) {
+        //借书时间
+        LocalDate borrowDate = LocalDate.now();
+        //还书时间
+        LocalDate returnDate = borrowDate.plusDays(14);
+
+        borrowRepository.insert(bookid, readerid, borrowDate.toString(), returnDate.toString(), null, 0);
+
     }
 
-
+    @Override
+    public List<Borrow> findAllBorrowByReaderId(Integer id) {
+        return borrowRepository.findAllByReaderId(id);
+    }
 }

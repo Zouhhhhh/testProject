@@ -23,3 +23,20 @@
 
 ## 分页
 通过sql语句的limit
+
+## 解耦
+登录那里成功后还调用了加载books数据的业务，需要拆开
+
+## 借阅功能
+1. 先看数据库表结构，borrow借阅表，存放记录信息
+2. 借阅这个操作，关联了book表，reader表，admin表
+3. 在bookServlet中写接收请求，带上method
+4. 调用bookService，需要将借阅记录insert到数据
+5. 调用borrowRepository，参数需要bookid,readerid,borrowtime,returntime
+
+## 展示当前用户的所有借书记录
+这回从repository开始写，而需要先写实体类来对应borrow表
+1. borrow类
+2. borrowRepository的findAllByReaderId
+3. bookService的findAllByReaderId
+4. 在bookServlet中addBorrow完后，跳转到borrow.jsp

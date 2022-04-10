@@ -7,16 +7,22 @@ public class Reader {
     private String password;
     private String name;
     private String tel;
-    private String carid;
+    private String cardid;
     private String gender;
 
-    public Reader(Integer id, String username, String password, String name, String tel, String carid, String gender) {
+    public Reader(String name, String tel, String cardid) {
+        this.name = name;
+        this.tel = tel;
+        this.cardid = cardid;
+    }
+
+    public Reader(Integer id, String username, String password, String name, String tel, String cardid, String gender) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
         this.tel = tel;
-        this.carid = carid;
+        this.cardid = cardid;
         this.gender = gender;
     }
 
@@ -60,12 +66,12 @@ public class Reader {
         this.tel = tel;
     }
 
-    public String getCarid() {
-        return carid;
+    public String getCardid() {
+        return cardid;
     }
 
-    public void setCarid(String carid) {
-        this.carid = carid;
+    public void setCardid(String cardid) {
+        this.cardid = cardid;
     }
 
     public String getGender() {

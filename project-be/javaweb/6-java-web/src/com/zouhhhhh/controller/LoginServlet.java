@@ -44,12 +44,7 @@ public class LoginServlet extends HttpServlet {
             if (object instanceof Reader) {
                 session.setAttribute("reader", object);
                 //跳转到读者首页
-                List<Book> books = bookService.findAll(1);
-                req.setAttribute("list", books);
-                req.setAttribute("dataPrePage", 6);
-                req.setAttribute("currentPage", 1);
-                req.setAttribute("pages", bookService.getPages());
-                req.getRequestDispatcher("index.jsp").forward(req, resp);
+                resp.sendRedirect("book?page=1");
             } else if (object instanceof Admin) {
                 session.setAttribute("admin", object);
                 //跳转到管理员首页

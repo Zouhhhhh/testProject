@@ -13,6 +13,10 @@ public interface BookService {
 
     void addBorrow(Integer bookid, Integer readerid);
 
-    List<Borrow> findAllBorrowByReaderId(Integer id);
+    List<Borrow> findAllBorrowByReaderId(Integer id, Integer page);
+
+    int getBorrowPages(Integer readerid);
+
+
 
 }

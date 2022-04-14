@@ -44,7 +44,16 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Borrow> findAllBorrowByReaderId(Integer id) {
-        return borrowRepository.findAllByReaderId(id);
+    public List<Borrow> findAllBorrowByReaderId(Integer id, Integer page) {
+        //将page换算成index, limit
+        int index = (page-1) * LIMIT;
+        return borrowRepository.findAllByReaderId(id, index, LIMIT);
+    }
+
+    @Override
+    public int getBorrowPages(Integer readerid) {
+        int count = borrowRepository.count(readerid);
+        int page = (int) Math.ceil((double) count / LIMIT);
+        return page;
     }
 }

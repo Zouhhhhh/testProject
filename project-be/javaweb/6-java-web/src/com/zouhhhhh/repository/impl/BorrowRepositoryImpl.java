@@ -5,6 +5,7 @@ import com.zouhhhhh.entity.Borrow;
 import com.zouhhhhh.entity.Reader;
 import com.zouhhhhh.repository.BorrowRepository;
 import com.zouhhhhh.utils.JDBCTools;
+import org.w3c.dom.xpath.XPathResult;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,15 +37,17 @@ public class BorrowRepositoryImpl implements BorrowRepository {
 
 
     @Override
-    public List<Borrow> findAllByReaderId(Integer id) {
+    public List<Borrow> findAllByReaderId(Integer id, Integer index, Integer limit) {
         Connection connection = JDBCTools.getConnection();
         String sql = "SELECT br.id, b.name, b.author, b.publish, br.borrowtime, br.returntime, r.name, r.tel" +
-                ", r.cardid, br.state FROM borrow br, book b, reader r where br.bookid = b.id and br.readerid = r.id and r.id = ?";
+                ", r.cardid, br.state FROM borrow br, book b, reader r where br.bookid = b.id and br.readerid = r.id and r.id = ? limit ?, ?";
         PreparedStatement preparableStatement  = null;
         ResultSet resultSet = null;
         try {
             preparableStatement = connection.prepareStatement(sql);
             preparableStatement.setInt(1, id);
+            preparableStatement.setInt(2, index);
+            preparableStatement.setInt(3, limit);
             resultSet = preparableStatement.executeQuery();
             List<Borrow> list = new ArrayList<>();
             Book book;
@@ -79,4 +82,20 @@ public class BorrowRepositoryImpl implements BorrowRepository {
     }
 
 
+    @Override
+    public int count(Integer readerid) {
+        Connection connection = JDBCTools.getConnection();
+        String sql = "SELECT COUNT(1) FROM borrow br, reader r WHERE br.readerid = r.id AND r.id = ? ";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, readerid);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

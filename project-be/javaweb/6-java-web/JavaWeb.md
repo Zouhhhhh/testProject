@@ -42,3 +42,20 @@
 4. 在bookServlet中addBorrow完后，跳转到borrow.jsp
 
 ## 过滤器实现登录拦截
+
+
+
+## 借书记录页面做分页
+1. 就是从servlet接收到一个page参数
+2. 调整borrowService的find，加page参数
+3. borrowRepository的sql增加limit ?, ?
+
+
+## 借阅和查看借阅的业务解耦
+在bookServlet里再加一个case "findAllBorrow":
+查看借阅的入口变成index.jsp页面上点击人名进入，不再需要先addBorrow
+
+
+## 注销
+LogoutServlet
+销毁Session，重定向到login.jsp

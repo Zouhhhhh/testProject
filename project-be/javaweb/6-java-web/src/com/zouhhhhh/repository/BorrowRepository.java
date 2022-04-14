@@ -8,5 +8,7 @@ public interface BorrowRepository {
 
     void insert(Integer bookid, Integer readerid, String borrowtime, String returntime, Integer adminid, Integer state);
 
-    List<Borrow> findAllByReaderId(Integer id);
+    List<Borrow> findAllByReaderId(Integer id, Integer index, Integer limit);
+
+    int count(Integer readerid);
 }

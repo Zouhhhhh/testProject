@@ -25,11 +25,18 @@ public class BookServlet extends HttpServlet {
         String method = req.getParameter("method");
         method = method == null ? "findAll" : method;
 
+
+        String pageStr;
+        Integer page;
+        HttpSession session = req.getSession();
+        Reader reader = (Reader) session.getAttribute("reader");
+        Integer readerid = reader.getId();
+
         //流程控制
         switch (method) {
             case "findAll":
-                String pageStr = req.getParameter("page");
-                Integer page = Integer.parseInt(pageStr);
+                pageStr = req.getParameter("page");
+                page = Integer.parseInt(pageStr);
                 List<Book> books = bookService.findAll(page);
                 req.setAttribute("list", books);
                 req.setAttribute("dataPrePage", 6);
@@ -40,13 +47,17 @@ public class BookServlet extends HttpServlet {
             case "addBorrow":
                 String bookstr = req.getParameter("bookid");
                 Integer bookid = Integer.parseInt(bookstr);
-                HttpSession session = req.getSession();
-                Reader reader = (Reader) session.getAttribute("reader");
-                Integer readerid = reader.getId();
                 bookService.addBorrow(bookid, readerid);
+                break;
+            case "findAllBorrow":
+                pageStr = req.getParameter("page");
+                page = Integer.parseInt(pageStr);
                 //展示当前用户的所有借书记录
-                List<Borrow> borrowList = bookService.findAllBorrowByReaderId(readerid);
+                List<Borrow> borrowList = bookService.findAllBorrowByReaderId(readerid, page);
                 req.setAttribute("list", borrowList);
+                req.setAttribute("dataPrePage", 6);
+                req.setAttribute("currentPage", pageStr);
+                req.setAttribute("pages", bookService.getBorrowPages(readerid));
                 req.getRequestDispatcher("borrow.jsp").forward(req, resp);
                 break;
             default:

@@ -48,6 +48,7 @@ public class BookServlet extends HttpServlet {
                 String bookstr = req.getParameter("bookid");
                 Integer bookid = Integer.parseInt(bookstr);
                 bookService.addBorrow(bookid, readerid);
+                resp.sendRedirect("/book?method=findAllBorrow&page=1");
                 break;
             case "findAllBorrow":
                 pageStr = req.getParameter("page");

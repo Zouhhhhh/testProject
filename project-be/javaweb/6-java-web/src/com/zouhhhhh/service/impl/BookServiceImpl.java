@@ -56,4 +56,22 @@ public class BookServiceImpl implements BookService {
         int page = (int) Math.ceil((double) count / LIMIT);
         return page;
     }
+
+    @Override
+    public List<Borrow> findAllBorrow(Integer state, Integer page) {
+        int index = (page - 1) * LIMIT;
+        return borrowRepository.findAllBorrowByState(state, index, LIMIT);
+    }
+
+    @Override
+    public int getBorrowPagesByState(Integer state) {
+        int count = borrowRepository.countByState(state);
+        int page = (int) Math.ceil((double) count / LIMIT);
+        return page;
+    }
+
+    @Override
+    public void handleBorrow(Integer borrowId, Integer state, Integer adminId) {
+        borrowRepository.handle(borrowId, state, adminId);
+    }
 }

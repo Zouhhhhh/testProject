@@ -11,4 +11,10 @@ public interface BorrowRepository {
     List<Borrow> findAllByReaderId(Integer id, Integer index, Integer limit);
 
     int count(Integer readerid);
+
+    List<Borrow> findAllBorrowByState(Integer state, Integer index, Integer limit);
+
+    int countByState(Integer state);
+
+    void handle(Integer borrowId, Integer state, Integer adminId);
 }

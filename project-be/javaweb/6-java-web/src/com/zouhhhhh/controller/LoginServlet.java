@@ -2,6 +2,7 @@ package com.zouhhhhh.controller;
 
 import com.zouhhhhh.entity.Admin;
 import com.zouhhhhh.entity.Book;
+import com.zouhhhhh.entity.Borrow;
 import com.zouhhhhh.entity.Reader;
 import com.zouhhhhh.service.BookService;
 import com.zouhhhhh.service.LoginService;
@@ -48,6 +49,8 @@ public class LoginServlet extends HttpServlet {
             } else if (object instanceof Admin) {
                 session.setAttribute("admin", object);
                 //跳转到管理员首页
+                resp.sendRedirect("/admin?method=findAllBorrow&page=1");
+
             }
         } else {
             resp.sendRedirect("login.jsp");

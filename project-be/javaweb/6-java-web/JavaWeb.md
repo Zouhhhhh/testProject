@@ -59,3 +59,18 @@
 ## 注销
 LogoutServlet
 销毁Session，重定向到login.jsp
+
+
+## 管理员功能
+1. 登录后的servlet，跳转到管理员的首页admin.jsp
+2. 先要拿到borrow记录状态等于0的数据
+3. 写service、repository
+4. 管理员的借阅页面做分页
+
+
+## 管理借阅
+1. 同意1，拒绝2，设置state，设置admin审核
+2. 给admin加过滤器
+2. 操作过多注意释放连接
+
+

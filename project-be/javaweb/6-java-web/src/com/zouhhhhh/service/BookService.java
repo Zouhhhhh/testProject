@@ -17,6 +17,10 @@ public interface BookService {
 
     int getBorrowPages(Integer readerid);
 
+    List<Borrow> findAllBorrow(Integer state, Integer page);
 
+    int getBorrowPagesByState(Integer state);
+
+    void handleBorrow(Integer borrowId, Integer state, Integer adminId);
 
 }

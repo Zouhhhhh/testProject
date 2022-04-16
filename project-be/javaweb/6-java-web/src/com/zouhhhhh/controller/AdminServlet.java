@@ -28,11 +28,15 @@ public class AdminServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Admin admin = (Admin) session.getAttribute("admin");
 
+        String pageStr;
+        List<Borrow> list;
+        Integer page;
+
         switch (method) {
             case "findAllBorrow":
-                String pageStr = req.getParameter("page");
-                Integer page = Integer.valueOf(pageStr);
-                List<Borrow> list = bookService.findAllBorrow(0, page);
+                pageStr = req.getParameter("page");
+                page = Integer.valueOf(pageStr);
+                list = bookService.findAllBorrow(0, page);
                 req.setAttribute("list", list);
                 req.setAttribute("dataPrePage", 6);
                 req.setAttribute("currentPage", pageStr);
@@ -45,8 +49,21 @@ public class AdminServlet extends HttpServlet {
                 String stateStr = req.getParameter("state");
                 Integer state = Integer.valueOf(stateStr);
                 bookService.handleBorrow(borrowId, state, admin.getId());
-                resp.sendRedirect("/admin?page=1");
-
+                if (state == 1) {
+                    resp.sendRedirect("/admin?page=1");
+                } else {
+                    resp.sendRedirect("/admin?method=getBorrowed&page=1");
+                }
+                break;
+            case "getBorrowed":
+                pageStr = req.getParameter("page");
+                page = Integer.valueOf(pageStr);
+                list = bookService.findAllBorrow(1, page);
+                req.setAttribute("list", list);
+                req.setAttribute("dataPrePage", 6);
+                req.setAttribute("currentPage", pageStr);
+                req.setAttribute("pages", bookService.getBorrowPagesByState(1));
+                req.getRequestDispatcher("return.jsp").forward(req, resp);
                 break;
             default:
                 break;

@@ -74,3 +74,7 @@ LogoutServlet
 2. 操作过多注意释放连接
 
 
+## 还书管理
+1. 进入到adminServlet的method为getBorrowed方法
+2. 调用原有的findAllBorrowByState接口查出state为1的borrow记录
+3. 调用原有的handle接口，处理borrow的state设置为3

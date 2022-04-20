@@ -33,7 +33,7 @@ public class JDBCUtils {
 //        return connection;
 //    }
 
-        public static Connection getConnection() throws IOException, ClassNotFoundException, SQLException {
+    public static Connection getConnection() throws IOException, ClassNotFoundException, SQLException {
 
         String user = "root";
         String password = "root";

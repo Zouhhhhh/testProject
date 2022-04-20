@@ -16,6 +16,14 @@ public class Borrow {
     private Admin admin;
     private String state;
 
+    public Borrow(String borrowId, Book book, Reader reader, LocalDate borrowTime, LocalDate returnTime, String state) {
+        this.id = borrowId;
+        this.book = book;
+        this.reader = reader;
+        this.borrowTime = borrowTime;
+        this.returnTime = returnTime;
+        this.state = state;
+    }
 
     public Borrow(String id, Book book, Reader reader, LocalDate borrowTime, LocalDate returnTime, Admin admin, String state) {
         this.id = id;

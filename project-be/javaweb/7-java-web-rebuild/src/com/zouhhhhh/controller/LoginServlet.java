@@ -37,11 +37,18 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("reader", reader);
                     resp.sendRedirect("/book?page=1");
                 } else {
-                    resp.sendRedirect("/login");
+                    resp.sendRedirect("/login.jsp");
                 }
                 break;
             case "admin":
                 Admin admin = loginService.getAdmin(userName, password);
+                if (admin != null) {
+                    HttpSession session = req.getSession();
+                    session.setAttribute("admin", admin);
+                    resp.sendRedirect("/admin?page=1");
+                } else {
+                    resp.sendRedirect("/login.jsp");
+                }
                 break;
             default:
                 break;

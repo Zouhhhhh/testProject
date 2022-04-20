@@ -17,6 +17,12 @@ public class Book {
     private Boolean abled;
     private BookCase bookCase;
 
+    public Book(String name, String author, String publish) {
+        this.name = name;
+        this.author = author;
+        this.publish = publish;
+    }
+
     public Book(String id, String name, String author, String publish, Integer pages
             , BigDecimal price, Boolean abled, BookCase bookCase) {
         this.id = id;

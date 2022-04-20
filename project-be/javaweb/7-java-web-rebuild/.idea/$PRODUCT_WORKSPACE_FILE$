@@ -8,7 +8,11 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
+<<<<<<< HEAD
                 <option value="0.2" />
+=======
+                <option value="0.13495277" />
+>>>>>>> f5c6100317b8458407fd8615dfa2fa54ddd99702
               </list>
             </option>
           </splitter-proportions>

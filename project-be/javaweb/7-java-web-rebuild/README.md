@@ -54,4 +54,24 @@ jsp页面：读者（index.jsp），管理员（admin.jsp）——这里用到�
 Servlet：BookServlet
 Service：BookService
 Repository：BookRepository（包含分页）
-    
+方法：findAllBook
+
+## 借阅
+Servlet：BookServlet
+Service：BookService
+Repository：borrowRepository
+方法：addBorrow
+
+## 借阅页
+jsp页面：borrow.jsp
+Servlet：BookServlet
+Service：BookService
+Repository：borrowRepository
+方法：findAllBorrow
+
+## 注销
+Servlet：LogoutServlet
+
+## 过滤器
+CharacterFilter
+ReaderFilter

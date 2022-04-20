@@ -5,7 +5,7 @@
     - 在controller写servlet
     - 在service写接口和实现类
     - 在entity写对象，方便service返回对象
-    - 在repository写连接数据库，一个表对应一个repository接口
+    - 在repository写连接数据库，一个表对应一个repository接口（也叫dao层，data access object数据访问层）
     - 从controller开始，依次注入各层依赖的对象
     
 ## 登录页面

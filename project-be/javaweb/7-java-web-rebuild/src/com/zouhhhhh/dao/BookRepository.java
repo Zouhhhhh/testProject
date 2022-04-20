@@ -12,7 +12,8 @@ public interface BookRepository {
 
     /**
      * 获取所有书籍信息
-     * @param page
+     * @param index
+     * @param limit
      * @return
      */
     List<Book> findAllBook(Integer index, Integer limit);

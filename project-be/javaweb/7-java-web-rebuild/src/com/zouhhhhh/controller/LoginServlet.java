@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("reader", reader);
                     resp.sendRedirect("/book?page=1");
                 } else {
-                    resp.sendRedirect("/login");
+                    resp.sendRedirect("/login.jsp");
                 }
                 break;
             case "admin":

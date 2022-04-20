@@ -15,6 +15,12 @@ public class Reader {
     private String cardId;
     private String gender;
 
+    public Reader(String name, String tel, String cardId) {
+        this.name = name;
+        this.tel = tel;
+        this.cardId = cardId;
+    }
+
     public Reader(String id, String userName, String password, String name
             , String tel, String cardId, String gender) {
         this.id = id;

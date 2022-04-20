@@ -1,7 +1,9 @@
 package com.zouhhhhh.service;
 
 import com.zouhhhhh.bean.Book;
+import com.zouhhhhh.bean.Borrow;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,4 +23,40 @@ public interface BookService {
      * @return
      */
     int getCountOfBook();
+
+    /**
+     * 获取Book表总页数
+     * @return
+     */
+    int getBookPages();
+
+    /**
+     * 借阅图书
+     * @param bookId
+     * @param readerId
+     */
+    void addBorrow(String bookId, String readerId);
+
+    /**
+     * 获取所有借阅信息
+     * @param readerId
+     * @param page
+     * @return
+     */
+    List<Borrow> findAllBorrow(String readerId, Integer page);
+
+    /**
+     * 设置分页信息
+     * @param request
+     * @param currentPage
+     * @param pages
+     */
+    void setPageInfo(HttpServletRequest request, String currentPage, Integer pages);
+
+    /**
+     * 获取Borrow表页数
+     * @return
+     */
+    int getBorrowPages();
+
 }

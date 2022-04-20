@@ -42,6 +42,13 @@ public class LoginServlet extends HttpServlet {
                 break;
             case "admin":
                 Admin admin = loginService.getAdmin(userName, password);
+                if (admin != null) {
+                    HttpSession session = req.getSession();
+                    session.setAttribute("admin", admin);
+                    resp.sendRedirect("/admin?page=1");
+                } else {
+                    resp.sendRedirect("/login.jsp");
+                }
                 break;
             default:
                 break;

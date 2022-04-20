@@ -47,7 +47,7 @@ public class BorrowRepositoryImpl implements BorrowRepository {
     }
 
     @Override
-    public List<Borrow> findAllBorrow(String readerId, Integer index, Integer limit) {
+    public List<Borrow> findAllBorrowByReader(String readerId, Integer index, Integer limit) {
         Connection connection = JdbcTool.getConnection();
         String sql = "SELECT br.id, b.name, b.author, b.publish, br.borrowtime, br.returntime, r.name, r.tel" +
                 ", r.cardid, br.state FROM borrow br, book b, reader r where br.bookid = b.id and br.readerid = r.id and r.id = ? limit ?, ?";
@@ -108,5 +108,46 @@ public class BorrowRepositoryImpl implements BorrowRepository {
         }
 
         return 0;
+    }
+
+    @Override
+    public List<Borrow> findAllBorrowByState(String state, Integer index, Integer limit) {
+        Connection connection = JdbcTool.getConnection();
+        String sql = "SELECT br.id, b.name, b.author, b.publish, br.borrowtime, br.returntime, r.name, r.tel" +
+                ", r.cardid, br.state FROM borrow br, book b, reader r where br.bookid = b.id and br.readerid = r.id and br.state = ? limit ?, ?";
+        PreparedStatement preparableStatement  = null;
+        ResultSet resultSet = null;
+        try {
+            preparableStatement = connection.prepareStatement(sql);
+            preparableStatement.setString(1, state);
+            preparableStatement.setInt(2, index);
+            preparableStatement.setInt(3, limit);
+            resultSet = preparableStatement.executeQuery();
+            List<Borrow> borrows = new ArrayList<>();
+            Book book;
+            Reader reader;
+            Borrow borrow;
+            while (resultSet.next()) {
+                String borrowId = resultSet.getString(1);
+                String bookName = resultSet.getString(2);
+                String author = resultSet.getString(3);
+                String publish = resultSet.getString(4);
+                Date borrowTime = resultSet.getDate(5);
+                Date returnTime = resultSet.getDate(6);
+                String readerName = resultSet.getString(7);
+                String tel = resultSet.getString(8);
+                String cardId = resultSet.getString(9);
+                book = new Book(bookName, author, publish);
+                reader = new Reader(readerName, tel, cardId);
+                borrow = new Borrow(borrowId, book, reader, borrowTime.toLocalDate(), returnTime.toLocalDate(), state);
+                borrows.add(borrow);
+            }
+            return borrows;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcTool.release(connection, preparableStatement, resultSet);
+        }
+        return null;
     }
 }

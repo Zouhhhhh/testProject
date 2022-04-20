@@ -44,7 +44,7 @@ public class BookServlet extends HttpServlet {
                 resp.sendRedirect("/book?method=findAllBorrow&page=1");
                 break;
             case "findAllBorrow":
-                List<Borrow> borrows = bookService.findAllBorrow(reader.getId(), Integer.valueOf(pageStr));
+                List<Borrow> borrows = bookService.findAllBorrowByReader(reader.getId(), Integer.valueOf(pageStr));
                 req.setAttribute("borrows", borrows);
                 bookService.setPageInfo(req, pageStr, bookService.getBorrowPages());
                 req.getRequestDispatcher("/borrow.jsp").forward(req, resp);

@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public int getBookPages() {
-        return (int) Math.ceil(bookRepository.getCountOfBook() / Constant.PAGE_LIMIT);
+        return (int) Math.ceil(getCountOfBook() / Constant.PAGE_LIMIT);
     }
 
     @Override
@@ -45,9 +45,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Borrow> findAllBorrow(String readerId, Integer page) {
+    public List<Borrow> findAllBorrowByReader(String readerId, Integer page) {
         int index = (page - 1) * Constant.PAGE_LIMIT;
-        return borrowRepository.findAllBorrow(readerId, index, Constant.PAGE_LIMIT);
+        return borrowRepository.findAllBorrowByReader(readerId, index, Constant.PAGE_LIMIT);
     }
 
     @Override
@@ -58,7 +58,18 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public int getCountOfBorrow() {
+        return borrowRepository.getCountOfBorrow();
+    }
+
+    @Override
     public int getBorrowPages() {
-        return (int) Math.ceil(borrowRepository.getCountOfBorrow() / Constant.PAGE_LIMIT);
+        return (int) Math.ceil(getCountOfBorrow() / Constant.PAGE_LIMIT);
+    }
+
+    @Override
+    public List<Borrow> findAllBorrowByState(String state, Integer page) {
+        int index = (page - 1) / Constant.PAGE_LIMIT;
+        return borrowRepository.findAllBorrowByState(state, page, index);
     }
 }

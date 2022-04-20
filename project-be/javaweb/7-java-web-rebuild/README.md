@@ -18,7 +18,7 @@ Reader
 Admin
 Borrow
 
-## JDBC工具类
+# JDBC工具类
 1. 导包
     - mysql驱动
     - c3p0两个包
@@ -40,7 +40,7 @@ JDBC接口（API）包括两个层次：
 - C3P0是个第三方工具，他提供DateSource接口的实现类（ComboPooledDataSource）
 - 这样我们只需要通过dateSource数据库连接池对象去获取连接，而不用直接通过DateManger向数据库驱动获取连接
 
-
+# 读者功能
 ## 登录
 jsp页面：login.jsp
 Servlet：LoginServlet，读者和管理员的，跳转到首页
@@ -75,3 +75,12 @@ Servlet：LogoutServlet
 ## 过滤器
 CharacterFilter
 ReaderFilter
+
+# 管理员功能
+管理员主要有两个功能，一个是审核借阅记录，另一个是归还图书
+## 登录
+Servlet：LoginServlet
+
+
+
+

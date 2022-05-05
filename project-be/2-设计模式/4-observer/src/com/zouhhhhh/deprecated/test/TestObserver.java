@@ -1,8 +1,8 @@
-package com.zouhhhhh.test;
+package com.zouhhhhh.deprecated.test;
 
-import com.zouhhhhh.observeable.ProductList;
-import com.zouhhhhh.observer.JingDongObserver;
-import com.zouhhhhh.observer.TaoBaoObserver;
+import com.zouhhhhh.deprecated.observeable.ProductList;
+import com.zouhhhhh.deprecated.observer.JingDongObserver;
+import com.zouhhhhh.deprecated.observer.TaoBaoObserver;
 
 public class TestObserver {
     public static void main(String[] args) {

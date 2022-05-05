@@ -1,4 +1,4 @@
-package com.zouhhhhh.observeable;
+package com.zouhhhhh.deprecated.observeable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,7 @@ public class ProductList extends Observable {
     private ProductList(){}
 
     /**
+     * TODO: synchronized的使用
      * 取得唯一实例
      * @return  产品列表唯一实例
      */

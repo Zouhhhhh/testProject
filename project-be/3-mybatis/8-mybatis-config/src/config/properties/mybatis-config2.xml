@@ -1,0 +1,34 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Mybatis配置文件的所有元素代码清单 -->
+<configuration>    <!-- 配置 -->
+    <!-- 属性 -->
+    <properties resource="jdbc.properties"/>
+
+    <!-- 类型命名 -->
+    <typeAliases>
+        <typeAlias alias="role" type="com.zouhhhhh.pojo.Role"/>
+    </typeAliases>
+
+    <environments default="development">  <!-- 配置环境 -->
+        <environment id="development"> <!-- 环境变量 -->
+            <transactionManager type="JDBC"/>   <!-- 事务管理器 -->
+            <!-- 数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${database.driver}"/>
+                <property name="url" value="${database.url"/>
+                <property name="username" value="${databse.username"/>
+                <property name="password" value="${database.password"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 映射器 -->
+    <mappers>
+        <mapper resource="com/zouhhhhh/mapper/RoleMapper.xml"/>
+    </mappers>
+
+</configuration>

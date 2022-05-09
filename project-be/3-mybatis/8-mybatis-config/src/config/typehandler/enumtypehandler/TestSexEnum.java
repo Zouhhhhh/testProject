@@ -1,4 +1,4 @@
-package config.typehandler.enumordinaltypehandler;
+package config.typehandler.enumtypehandler;
 
 
 import org.apache.ibatis.io.Resources;
@@ -6,20 +6,19 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 
 public class TestSexEnum {
 
     public static void main(String[] args) {
-        String resource = "config/typehandler/enumordinaltypehandler/mybatis-config.xml";
+        String resource = "config/typehandler/enumtypehandler/mybatis-config.xml";
         try {
             InputStream inputStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             SqlSession sqlSession = sqlSessionFactory.openSession();
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-            User user = mapper.getUser(1L);
+            User user = mapper.getUser(2L);
             System.err.println(user.getSex().getName());
             sqlSession.close();
         } catch (IOException e) {

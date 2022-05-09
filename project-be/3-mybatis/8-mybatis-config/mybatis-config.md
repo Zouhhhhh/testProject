@@ -25,6 +25,23 @@
     - 自定义typeHandler（先写好MyTypeHandler实现接口，然后在xml注册这个typeHandler，最后还可以显示启用typeHandler）
     - 枚举typeHandler
         在绝大多数情况下，typeHandler因为枚举而使用，mybatis已经定义了两个类作为枚举类型的支持，分别是EnumOrdinalTypeHandler和EnumTypeHandler
+        - EnumOrdinalTypeHandler: 按Mybatis根据枚举数组下标索引的方式进行匹配，也是枚举类型的默认转换类，它要求数据库返回一个整数作为其下标，它会根据下标找出对应的枚举类型。
+        - EnumTypeHandler：会把使用的名称转化为对应的枚举，比如根据数据库返回的字符串“MALE”,进行Enum.valueOf(SexEnum.class, "MALE")的转换
+        - 自定义枚举：
+    - 文件操作
    
 ## 5、ObjectFactory（对象工厂）
-    
+	当创建结果集时，Mybatis会使用一个对象工厂来完成创建这个结果集实例。默认使用-DefaultObjectFactory
+
+## 6、插件
+
+## 7、environments（运行环境）
+    主要作用是配置数据库信息，可以配置多个。它可以分为两个可配置的元素，事务管理器(TransactionManager)和数据源(dataSource)。
+    - 事务管理器：
+        transactionManager提供了两个实现类（JdbcTransaction和ManagedTransaction），它需要实现接口transaction。从接口代码可知，它的主要工作就是提交、回滚和关闭数据库的事务。
+        于是对应着两种工厂：JdbcTransactionFactory和ManagedTransactionFactory，工厂需要实现TransactionFactory接口，通过他们会生成对应的Transaction对象
+        所以可以配置以下两种事务管理器
+            - <transactionManager type="JDBC"/>，以jdbc的方式提交和回滚事务
+            - <transactionManager type="MANAGED"/>，它的提交和回滚不用任何操作，而是把事务交给容器管理，默认情况下会关闭连接。
+    - 数据源环境：
+        通过PooledDataSourceFactory、UnpooledDataSourceFactory和JndiDataSourceFactory三个工厂类来提供，最后生成一个实现了DataSource接口的数据库连接对象

@@ -45,3 +45,27 @@
             - <transactionManager type="MANAGED"/>，它的提交和回滚不用任何操作，而是把事务交给容器管理，默认情况下会关闭连接。
     - 数据源环境：
         通过PooledDataSourceFactory、UnpooledDataSourceFactory和JndiDataSourceFactory三个工厂类来提供，最后生成一个实现了DataSource接口的数据库连接对象
+
+## 8、databaseIdProvider数据库厂商标识
+
+
+## 9、引入映射器的方法
+    首先，定义接口RoleMapper
+    其次、给出XML文件RoleMapper.xml
+        <mapper namespace="config.typehandler.myenumtypehandler.UserMapper">
+        </mapper>
+    引入映射器的方法，有以下几种：
+        - 用文件路径引入映射器
+            <mappers>
+                <mapper resource="com/lean/ssm/character3/mapper/RoleMapper.xml"></mapper>
+            </mappers>
+        - 用包名引入映射器
+            <mappers>
+                <package name="com.zouhhhhh.mapper"></package>
+            </mappers>
+        - 用类注册引入映射器
+            <mappers>
+                <mapper class="com.zouhhhhh.mapper.RoleMapper"></mapper>
+            </mappers>
+        - 用userMapper.xml引入映射器
+            

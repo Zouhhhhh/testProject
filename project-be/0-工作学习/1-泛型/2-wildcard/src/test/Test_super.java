@@ -19,7 +19,7 @@ public class Test_super {
         wildcard.setFirst(boss);     // right
         Object e = wildcard.getFirst();  // right
 
-        Manager e = wildcard.getFirst();  // error
+//        Manager m = wildcard.getFirst();  // error
     }
 
 

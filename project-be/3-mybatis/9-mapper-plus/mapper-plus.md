@@ -36,14 +36,73 @@
 
 ## 5、sql元素
 
-
-
-
-
 ## 6、参数
 
 
-
-
-
 ## 7、resultMap元素
+    resultMap的作用是定义映射规则、级联的更新、定制类型转化器等。
+    resultMap定义的主要是一个结果集的映射关系，也就是SQL到Java Bean的映射关系定义，它也支持级联等特性。
+ - resultMap元素的构成
+``` xml
+<resultMap>
+    
+    <constructor>
+    	<idArg/>
+        <arg/>
+    </constructor>
+    
+    <id/>
+    <result/>
+    <association/>
+    <collection/>
+    <discriminator>
+    	<case/>
+    </discriminator>
+    
+</resultMap>
+```
+
+
+
+- 使用map存储结果集
+
+    可读性差，不推荐
+
+
+
+- 使用POJO存储结果集
+
+    和select标签中的resultMap对应使用
+
+``` xml
+
+<mapper namespace=”com.learn . ssm . chapterS .mapper . RoleMapper”>
+	<resultMap id= ” roleMap” type= ” role ” >
+        <id property= ” id” column= ” id” />
+        <result property= ” roleName ” column= ” role name ” />
+        <result property= ” note ” column= ” note ” />
+    </resultMap> 
+
+</mapper>
+
+```
+
+resultMap元素属性id代表这个resultMap的标识，type代表着需要映射的pojo（可以使用别名）。
+
+在映射关系中，id元素标识这个对象的主键，property代表着pojo的属性名称，column标识数据库SQL的列名
+
+
+
+## 8、级联
+
+级联是resultMap中的配置，比较复杂。当级联的层级超过3层时，就不要考虑使用级联了。
+
+
+
+### 8.1 Mybatis中的级联
+
+- 鉴别器（discriminator）：它是一个根据某些条件决定采用具体实现类级联的方案。
+- 一对一（association）：比如学生和学生证。
+- 一对多（collection）：比如班主任和学生。
+
+（注意：没有多对多级联，可以通过两个一对多替换）

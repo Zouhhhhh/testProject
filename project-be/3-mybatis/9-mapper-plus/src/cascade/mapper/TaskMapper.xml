@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cascade.mapper.TaskMapper">
+
+    <insert id="addTask" parameterType="task">
+        INSERT INTO t_task (id, title, context, note) values(#{task.title}, #{task.context}, #{task.note})
+    </insert>
+
+    <delete id="deleteTask" parameterType="long">
+        DELETE FROM t_task WHERE id = #{task.id}
+    </delete>
+
+    <update id="updateTask" parameterType="task">
+        UPDATE t_task SET title = #{task.title}, context = #{task.context}, note = #{task.note} WHERE id = #{task.id}
+    </update>
+
+    <select id="getTaskCount" resultType="int">
+        SELECT COUNT(1) FROM t_task
+    </select>
+
+    <select id="getTaskById" parameterType="long" resultType="task">
+        SELECT id, title, context, note FROM t_task WHERE id = #{id}
+    </select>
+
+    <select id="getTasks" resultType="task">
+        SELECT id, title, context, note FROM t_task LIMIT #{offset}, #{limit}
+    </select>
+
+
+</mapper>

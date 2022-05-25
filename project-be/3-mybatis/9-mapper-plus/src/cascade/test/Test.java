@@ -13,18 +13,8 @@ public class Test {
 
         SqlSession sqlSession = SqlSessionFactoryUtils.openSqlSession();
         EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-        Employee maleEmployee = mapper.getEmployeeById(1L);
-        System.out.println(maleEmployee.getSex());
-
-
-//        WorkCardMapper mapper = sqlSession.getMapper(WorkCardMapper.class);
-//        WorkCard workCardByEmpId = mapper.getWorkCardByEmpId(1L);
-//        System.out.println(workCardByEmpId.getRealName());
-
-//        EmployeeTaskMapper mapper = sqlSession.getMapper(EmployeeTaskMapper.class);
-//        EmployeeTask employeeTaskByEmpId = mapper.getEmployeeTaskByEmpId(1L);
-//        System.out.println(employeeTaskByEmpId.getEmpId());
-
+        Employee femaleEmployee = mapper.getEmployeeById(2L);
+        System.out.println(femaleEmployee.getSex());
 
     }
 

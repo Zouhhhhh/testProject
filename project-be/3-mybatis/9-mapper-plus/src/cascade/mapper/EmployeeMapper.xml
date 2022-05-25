@@ -33,7 +33,7 @@
 
 
     <select id="getEmployeeById" parameterType="long" resultMap="employee">
-        SELECT id, real_name AS realName, sex, birthday, mobile, email, position, note FROM t_employee WHERE id = #{id};
+        SELECT id, real_name, sex, birthday, mobile, email, position, note FROM t_employee WHERE id = #{id};
     </select>
 
 </mapper>

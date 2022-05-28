@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manytomany.mapper.UserMapper">
+
+    <resultMap id="userMapper" type="user">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="real_name" property="realName"/>
+        <result column="sex" property="sex" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+
+        <collection property="roleList" column="id" fetchType="lazy" select="manytomany.mapper.RoleMapper.findRoleByUserId"/>
+    </resultMap>
+
+
+    <select id="getUser" parameterType="long" resultMap="userMapper">
+        SELECT id,
+               user_name,
+               real_name,
+               sex,
+               mobile,
+               email,
+               note
+        FROM t_user
+        WHERE id = #{id}
+    </select>
+
+    <select id="findUserByRoleId" parameterType="long" resultMap="userMapper">
+        SELECT u.id,
+               u.user_name,
+               u.real_name,
+               u.sex,
+               u.mobile,
+               u.email,
+               u.note
+        FROM t_user u, t_user_role ur
+        WHERE u.id = ur.user_id AND ur.role_id = #{roleId}
+    </select>
+
+
+</mapper>

@@ -12,9 +12,9 @@
         <result column="mobile" property="mobile"/>
         <result column="email" property="email"/>
         <result column="position" property="position"/>
-        <association property="workCard" column="id" select="cascade.mapper.WorkCardMapper.getWorkCardByEmpId"/>
+        <association property="workCard" column="id" fetchType="lazy" select="cascade.mapper.WorkCardMapper.getWorkCardByEmpId"/>
 
-        <collection property="employeeTaskList" column="id" select="cascade.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
+        <collection property="employeeTaskList" column="id" fetchType="lazy" select="cascade.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
 
         <discriminator javaType="long" column="sex">
             <case value="1" resultMap="maleHealthFormMapper"/>

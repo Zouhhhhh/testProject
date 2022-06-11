@@ -1,0 +1,14 @@
+<!-- 设置订单 -->
+<bean id="source" class="被动创建对象.Source">
+    <property name="fruit" value="橙汁"/>
+    <property name="sugar" value="少糖"/>
+    <property name="size" value="大杯"/>
+</bean>
+
+
+<!-- 将饮品店设置为贡茶，订单引用之前的定义 -->
+<bean id="juiceMaker2" class="被动创建对象.JuiceMaker2">
+    <property name="beverageShop" value="贡茶"/>
+    <property name="source" ref="source"/>
+</bean>
+

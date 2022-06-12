@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入命名空间 -->
+    <!-- 这里c:只有两个参数是因为Role的构造方法只有两个参数 -->
+    <bean id="role1" class="ioc.xml_config.pojo.Role" c:_0="1" c:_1="roleName1" />
+
+    <bean id="role2" class="ioc.xml_config.pojo.Role" p:id="2" p:roleName="roleName2" p:note="note2" />
+
+</beans>

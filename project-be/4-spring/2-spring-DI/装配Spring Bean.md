@@ -48,3 +48,14 @@
 - 使用XML定义Profile
 
 
+## 1.4 加载属性（Properties）文件
+### 1.4.1 使用注解方式加载
+- @Configuration 
+- @PropertySource(value = {"classpath:properties/annotation/database-config.properties"},ignoreResourceNotFound = false)
+通过以上方式只是放到环境（Environment）中。仅仅这样，在Spring中是没有**解析属性占位符**的能力，Spring推荐使用一个属性文件解析类进行处理——PropertySourcesPlaceholderConfigurer。使用它就意味着允许Spring解析对应的属性文件，并通过占位符去引用对应的配置。
+这样就可以在Bean中通过注入形式获取文件的配置了。
+
+
+
+
+

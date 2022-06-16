@@ -44,3 +44,7 @@
 
 
 ## 1.3 使用Profile
+- 使用注解@Profile配置
+- 使用XML定义Profile
+
+

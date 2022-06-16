@@ -42,6 +42,9 @@
 1. 在RoleServiceImpl3上设置@Primary，以这个为主
 2. 在RoleController的@Autowired下再加@Qualifier("roleService3")则可以消除歧义性
 
+### 1.2.4 使用@Bean装配Bean
+通过@Component装配Bean只能注解在类上，不能注解到方法上。对于Java而言，大部分的开发都需要引入第三方的包（jar文件），并通过方法返回第三方的类。这个时候Spring给予一个注解@Bean，它可以注解到方法之上，并且将方法返回的对象作为Spring的Bean，存放在IOC容器中。
+
 
 ## 1.3 使用Profile
 - 使用注解@Profile配置

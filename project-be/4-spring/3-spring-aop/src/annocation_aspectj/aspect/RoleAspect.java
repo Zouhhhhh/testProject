@@ -1,10 +1,16 @@
 package annocation_aspectj.aspect;
 
+import annocation_aspectj.service.RoleVerifier;
+import annocation_aspectj.service.impl.RoleVerifierImpl;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 // 2. 创建切面
 @Aspect
 public class RoleAspect {
+
+    @DeclareParents(value = "annocation_aspectj.service.impl.RoleServiceImpl+", defaultImpl = RoleVerifierImpl.class)
+    public RoleVerifier roleVerifier;
 
     @Before("execution(* annocation_aspectj.service.impl.RoleServiceImpl.printRole(..))")
     public void before() {
@@ -35,6 +41,17 @@ public class RoleAspect {
     @Before("print()")
     public void before2() {
         System.out.println("用print的before2...");
+    }
+
+    @Around("print()")
+    public void around(ProceedingJoinPoint jp) {
+        System.out.println("around before...");
+        try {
+            jp.proceed();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        System.out.println("around after...");
     }
 
 }

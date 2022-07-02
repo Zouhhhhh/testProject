@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <bean id="xmlAspect" class="xml_aspectj.aspect.XmlAspect"/>
+    <bean id="roleService" class="xml_aspectj.service.impl.RoleServiceImpl"/>
+
+
+
+    <!-- 这些通知拦截的方法都采用了同一个正则式去匹配，重写有些冗余 -->
+    <!-- 可以定义切点，引入切点匹配即可 -->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 引用xmlAspect作为切面 &ndash;&gt;-->
+<!--        <aop:aspect ref="xmlAspect">-->
+<!--            &lt;!&ndash; 定义切点 &ndash;&gt;-->
+<!--            <aop:pointcut id="printRole"-->
+<!--                          expression="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>-->
+
+<!--            &lt;!&ndash; 定义通知 &ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:before method="before"&ndash;&gt;-->
+<!--&lt;!&ndash;                        pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..)) and args(role)"/>&ndash;&gt;-->
+<!--            <aop:before method="before" pointcut-ref="printRole"/>-->
+<!--            <aop:after method="after"-->
+<!--                       pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))" />-->
+<!--            <aop:after-throwing method="afterThrowing"-->
+<!--                                pointcut-ref="printRole"/>-->
+<!--            <aop:after-returning method="afterReturning"-->
+<!--                                 pointcut-ref="printRole"/>-->
+
+<!--            &lt;!&ndash; 环绕通知 &ndash;&gt;-->
+<!--            <aop:around method="around" pointcut-ref="printRole"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+
+
+    <aop:config>
+        <!-- 引用xmlAspect作为切面 -->
+        <aop:aspect ref="xmlAspect">
+            <!-- 定义通知 -->
+            <aop:before method="before"
+                        pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after method="after"
+                       pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after-throwing method="afterThrowing"
+                                pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after-returning method="afterReturning"
+                                 pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+        </aop:aspect>
+    </aop:config>
+
+
+
+</beans>

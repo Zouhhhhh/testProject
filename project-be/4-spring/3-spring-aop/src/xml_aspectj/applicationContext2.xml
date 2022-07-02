@@ -1,0 +1,20 @@
+
+
+    <aop:config>
+        <!-- 引用xmlAspect作为切面 -->
+        <aop:aspect ref="xmlAspect">
+            <!-- 定义通知 -->
+            <aop:before method="before"
+                        pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after method="after"
+                        pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after-throwing method="afterThrowing"
+                        pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+
+            <aop:after-returning method="afterReturning"
+                                pointcut="execution(* xml_aspectj.service.impl.RoleServiceImpl.printRole(..))"/>
+        </aop:aspect>
+    </aop:config>
+

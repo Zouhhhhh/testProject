@@ -23,3 +23,7 @@ Spring提供了一个数据库配置类——SimpleDriverDataSource。不支持�
 这个比较复杂点。在Tomcat、WebLogic等JavaEE服务器上配置数据源，这时它存在一个JNDI的名称。也可以通过Spring所提供的JNDI机制获取对应的数据源。
 tomcat上显示配置好了数据源，但是不知道为什么spring就是加载不到。。。搞了俩小时搞不定。。。
 
+## 3. jdbcTemplate
+jdbcTemplate是Spring针对JDBC代码失控提供的解决方案。
+1. 在applicationContext.xml文件配置好数据源和jdbTemplate模板类，并将数据源注入
+2. 在Test中测试一下

@@ -2,6 +2,7 @@ package utils;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,6 +22,11 @@ public class MybatisUtils {
     public static SqlSessionFactory getSqlSessionFactory() {
         SqlSessionFactory sqlSessionFactory = getCtx().getBean(SqlSessionFactory.class);
         return sqlSessionFactory;
+    }
+
+    public static SqlSessionTemplate getSqlSessionTemplate() {
+        SqlSessionTemplate sqlSessionTemplate = getCtx().getBean(SqlSessionTemplate.class);
+        return sqlSessionTemplate;
     }
 
 }

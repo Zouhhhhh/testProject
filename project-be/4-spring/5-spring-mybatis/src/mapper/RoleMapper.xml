@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.RoleMapper">
     <select id="getRole" parameterType="long" resultType="role">
-        SELECT id, role_name AS roleName, note FROM t_role WHERE id = #{id}
+        SELECT id, role_name AS roleName, note FROM role WHERE id = #{id}
     </select>
+
+    <insert id="insertRole" parameterType="role">
+        INSERT INTO role (role_name, note) VALUES (#{roleName}, #{note});
+    </insert>
 </mapper>

@@ -1,0 +1,12 @@
+
+## 1. 通过XML文件配置事务管理器
+数据源用的是dbcp的数据源BasicDataSource，要用到两个jar包dbcp和pool。
+
+事务管理器用的是spring的DataSourceTransactionManager
+
+
+## 2. 通过Java配置类配置事务管理器
+注意配置类要使用注解@EnableTransactionManagement，这样在Spring上下文中使用事务注解@Transactional，Spring就会使用这个数据库事务管理器管理事务了。
+
+并且要实现接口TransactionManagementConfigurer，它有一个方法annotationDrivenTransactionManager用于获取事务管理器TransactionManager，同时我们用@Bean将它 放到容器中。
+

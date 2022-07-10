@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring.tx-4.0.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="maxActive" value="255"/>
+        <property name="maxIdle" value="5"/>
+        <property name="maxWait" value="10000"/>
+    </bean>
+
+    <!-- 这时的jdbcTemplate的数据库资源和事务已经由事务管理器处理了 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置数据源事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager"/>
+
+
+        <!-- 配置transactionAttributes的内容，Spring IOC启动时会解析这些内容，放到事务定义类TransactionDefinition中，在运行时会根据正则式的匹配决定方法采用哪种策略 -->
+        <property name="transactionAttributes">
+            <props>
+                <!-- key代表的是业务方法的正则式匹配，而其余内容可以配置各类事务定义参数 -->
+                <prop key="insert *">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+                <prop key="save*">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+                <prop key="add*">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+                <prop key="select*">PROPAGATION_REQUIRED, readOnly</prop>
+                <prop key="get*">PROPAGATION_REQUIRED, readOnly</prop>
+                <prop key="find*">PROPAGATION_REQUIRED, readOnly</prop>
+                <prop key="del*">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+                <prop key="remove*">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+                <prop key="update*">PROPAGATION_REQUIRED, ISOLATION_READ_UNCOMMITTED</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 上面只展示了Spring方法采取的事务策略，并没有告知Spring拦截哪些类 -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*ServiceImpl</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

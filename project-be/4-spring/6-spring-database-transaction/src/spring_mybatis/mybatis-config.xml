@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 别名 -->
+    <typeAliases>
+        <typeAlias alias="role" type="spring_mybatis.pojo.Role"></typeAlias>
+    </typeAliases>
+
+    <!-- 映射文件 -->
+    <mappers>
+        <mapper resource="spring_mybatis/mapper/RoleMapper.xml"></mapper>
+    </mappers>
+
+</configuration>

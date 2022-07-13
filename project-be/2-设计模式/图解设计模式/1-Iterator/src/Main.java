@@ -7,7 +7,7 @@ public class Main {
         bookShelf.appendBook(new Book("book3"));
         bookShelf.appendBook(new Book("book4"));
 
-        Iterator bookShelfIterator = new BookShelfIterator(bookShelf);
+        Iterator bookShelfIterator = bookShelf.iterator();
         while (bookShelfIterator.hasNext()) {
             Book book = (Book) bookShelfIterator.next();
             System.out.println(book.getBookName());

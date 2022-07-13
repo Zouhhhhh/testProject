@@ -18,6 +18,6 @@ public class BookShelf implements Aggregate{
 
     @Override
     public Iterator iterator() {
-        return null;
+        return new BookShelfIterator(this);
     }
 }

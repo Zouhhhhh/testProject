@@ -6,7 +6,7 @@
     <!-- 别名 -->
     <typeAliases>
         <!-- 只能选一个 -->
-        <typeAlias alias="role" type="com.zouhhhhh.xml.pojo.Role"/>
+        <typeAlias alias="role" type="xml.pojo.Role"/>
 <!--        <typeAlias alias="role" type="com.zouhhhhh.zhujie.pojo.Role"/>-->
     </typeAliases>
 

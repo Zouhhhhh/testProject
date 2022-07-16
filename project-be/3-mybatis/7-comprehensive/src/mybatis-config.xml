@@ -5,7 +5,7 @@
 
     <!-- 别名 -->
     <typeAliases>
-        <typeAlias alias="role" type="com.zouhhhhh.pojo.Role"/>
+        <typeAlias alias="role" type="pojo.Role"/>
     </typeAliases>
 
 
@@ -27,7 +27,7 @@
 
     <!-- 映射文件 -->
     <mappers>
-        <mapper resource="com/zouhhhhh/mapper/RoleMapper.xml"></mapper>
+        <mapper resource="mapper/RoleMapper.xml"></mapper>
     </mappers>
 
 </configuration>

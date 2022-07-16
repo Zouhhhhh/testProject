@@ -5,8 +5,8 @@
 
     <!-- 别名 -->
     <typeAliases>
-<!--        <typeAlias alias="role" type="com.zouhhhhh.bysqlsession.pojo.Role"/>-->
-        <typeAlias alias="role" type="com.zouhhhhh.bymapper.pojo.Role"/>
+        <typeAlias alias="role" type="bysqlsession.pojo.Role"/>
+<!--        <typeAlias alias="role" type="bymapper.pojo.Role"/>-->
     </typeAliases>
 
 
@@ -28,8 +28,8 @@
 
     <!-- 映射文件 -->
     <mappers>
-<!--        <mapper resource="com/zouhhhhh/bysqlsession/mapper/RoleMapper.xml"></mapper>-->
-        <mapper resource="com/zouhhhhh/bymapper/mapper/RoleMapper.xml"></mapper>
+        <mapper resource="bysqlsession/mapper/RoleMapper.xml"></mapper>
+<!--        <mapper resource="bymapper/mapper/RoleMapper.xml"></mapper>-->
     </mappers>
 
 </configuration>

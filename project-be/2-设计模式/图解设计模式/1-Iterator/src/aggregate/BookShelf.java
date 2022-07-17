@@ -1,3 +1,8 @@
+package aggregate;
+
+import iterator.BookShelfIterator;
+import iterator.Iterator;
+
 import java.util.ArrayList;
 import java.util.List;
 

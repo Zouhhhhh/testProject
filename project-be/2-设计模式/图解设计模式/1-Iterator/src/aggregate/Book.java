@@ -1,3 +1,5 @@
+package aggregate;
+
 public class Book {
     private String bookName;
 

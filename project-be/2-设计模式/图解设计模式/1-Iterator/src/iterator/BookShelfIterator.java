@@ -1,3 +1,7 @@
+package iterator;
+
+import aggregate.BookShelf;
+
 public class BookShelfIterator implements Iterator {
 
     private BookShelf bookShelf;

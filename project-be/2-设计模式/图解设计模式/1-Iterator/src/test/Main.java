@@ -1,3 +1,9 @@
+package test;
+
+import aggregate.Book;
+import aggregate.BookShelf;
+import iterator.Iterator;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +28,5 @@ public class Main {
             Book book = (Book) bookShelfIterator.next();
             System.out.println(book.getBookName());
         }
-
     }
 }

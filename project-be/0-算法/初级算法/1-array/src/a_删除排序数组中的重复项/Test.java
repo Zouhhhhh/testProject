@@ -1,4 +1,4 @@
-package 一_删除排序数组中的重复项;
+package a_删除排序数组中的重复项;
 
 public class Test {
 

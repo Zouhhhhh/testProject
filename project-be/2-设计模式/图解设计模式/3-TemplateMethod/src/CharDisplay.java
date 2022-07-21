@@ -4,7 +4,6 @@ public class CharDisplay extends AbstractDisplay {
         this.c = c;
     }
 
-
     @Override
     public void open() {
         System.out.print("<<");

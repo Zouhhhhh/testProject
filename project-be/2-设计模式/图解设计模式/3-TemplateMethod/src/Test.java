@@ -1,9 +1,19 @@
 public class Test {
     public static void main(String[] args) {
-        AbstractDisplay display = new CharDisplay('a');
+        AbstractDisplay display = userA();
         display.display();
 
-        display = new StringDisplay("hello world");
+        System.out.println("=======");
+
+        display = userB();
         display.display();
     }
+    public static AbstractDisplay userA() {
+        return new CharDisplay('a');
+    }
+
+    public static AbstractDisplay userB() {
+        return new StringDisplay("hello world");
+    }
+
 }

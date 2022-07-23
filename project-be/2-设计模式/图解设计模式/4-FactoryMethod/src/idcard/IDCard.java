@@ -1,4 +1,8 @@
-public class IDCard extends Product{
+package idcard;
+
+import framework.Product;
+
+public class IDCard extends Product {
     private String name;
     IDCard(String name) {
         System.out.println("制作ID卡： " + name);

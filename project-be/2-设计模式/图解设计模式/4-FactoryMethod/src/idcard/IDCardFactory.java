@@ -1,9 +1,14 @@
+package idcard;
+
+import framework.Factory;
+import framework.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class IDCardFactory extends Factory {
 
-    private List<IDCard> idCardList = new ArrayList<>();
+    private List owners = new ArrayList<>();
 
     @Override
     public Product createProduct(String owner) {
@@ -12,10 +17,10 @@ public class IDCardFactory extends Factory {
 
     @Override
     public void registerProduct(Product p) {
-        System.out.println("注册ID卡： " + ((IDCard) p).getName());
+        owners.add(((IDCard) p).getName());
     }
 
     public List<IDCard> getIdCardList() {
-        return idCardList;
+        return owners;
     }
 }

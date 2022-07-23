@@ -1,3 +1,9 @@
+package test;
+
+import framework.Factory;
+import framework.Product;
+import idcard.IDCardFactory;
+
 public class Test {
     public static void main(String[] args) {
         Factory factory = new IDCardFactory();

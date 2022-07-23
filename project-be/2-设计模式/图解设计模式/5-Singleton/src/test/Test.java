@@ -1,4 +1,4 @@
-import org.w3c.dom.ls.LSOutput;
+package test;
 
 public class Test {
 
@@ -14,8 +14,8 @@ public class Test {
     }
 
 //    public static void main(String[] args) {
-//        TicketMakerSingleton ticketMaker1 = TicketMakerSingleton.getInstance();
-//        TicketMakerSingleton ticketMaker2 = TicketMakerSingleton.getInstance();
+//        test.TicketMakerSingleton ticketMaker1 = test.TicketMakerSingleton.getInstance();
+//        test.TicketMakerSingleton ticketMaker2 = test.TicketMakerSingleton.getInstance();
 //
 //        System.out.println("ticket1 :" + ticketMaker1.getNextTicketNumber());
 //        System.out.println("ticket1 :" + ticketMaker1.getNextTicketNumber());

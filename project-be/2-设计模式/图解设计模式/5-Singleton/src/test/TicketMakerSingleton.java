@@ -1,3 +1,5 @@
+package test;
+
 public class TicketMakerSingleton {
 
     private static TicketMakerSingleton ticketMakerSingleton = new TicketMakerSingleton();
